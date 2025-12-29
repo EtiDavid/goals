@@ -1,0 +1,16 @@
+FROM node
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+ENV REACT_APP_API_URL=http://goalslb-618720737.eu-north-1.elb.amazonaws.com
+#ENV REACT_APP_API_URL=http://localhost
+
+CMD [ "npm", "start" ]
