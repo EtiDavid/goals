@@ -131,6 +131,7 @@ jobs:
     needs:
       - build_backend
       - build_frontend
+      - deploy_backend_to_AWS
 
     if: ${{ needs.build_backend.outputs.IS_RELEASE == 'true' }}
 
